@@ -25,7 +25,7 @@ public class AttendanceCatalog {
 	 {
 		for(int i=0; i<AttendanceCat.size(); i++)
 		{
-			if(AttendanceCat.get(i).date.equalsIgnoreCase(date_id))
+			if(AttendanceCat.get(i).date!=null&&AttendanceCat.get(i).date.equalsIgnoreCase(date_id))
 			{
 				return AttendanceCat.get(i);
 			}

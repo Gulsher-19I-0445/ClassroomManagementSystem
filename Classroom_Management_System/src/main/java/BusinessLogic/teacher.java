@@ -142,7 +142,7 @@ public class teacher
 			int check=0;
 			for(int i=0; i<AttendanceCatalog.AttendanceCat.size();i++)
 			{
-				if(AttendanceCatalog.AttendanceCat.get(i).date.equals(date))
+				if(AttendanceCatalog.AttendanceCat.get(i).date!=null&&AttendanceCatalog.AttendanceCat.get(i).date.equals(date))
 				{
 					check=1;
 					break;

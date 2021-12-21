@@ -74,7 +74,7 @@ public class Date
     
     public void setMonth(String Month)
 	{
-		day = Integer.parseInt(Month);
+		month = Integer.parseInt(Month);
 	}
 
     //Getter for year
@@ -83,7 +83,7 @@ public class Date
     }   
     public void seYear(String Year)
 	{
-		day = Integer.parseInt(Year);
+		year = Integer.parseInt(Year);
 	}
     /*
 		Returns full date as a String in dd/mm/yyyy format 

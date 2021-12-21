@@ -4,12 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import DataBase.Oracle_DataBase;
 
 @Entity
-
+@Table(name = "aassessment")
 public class Assessment 
 {
 	@Id
@@ -92,8 +93,8 @@ public class Assessment
 	public void set_Assign_Date(String Date, String Month, String Year) 
 	{
 		assign_date.setDay(Date);
-		assign_date.setDay(Month);
-		assign_date.setDay(Year);
+		assign_date.setMonth(Month);
+		assign_date.seYear(Year);
 	}
 	
 	public String get_Due_Date() 
@@ -104,16 +105,16 @@ public class Assessment
 	public void set_Due_Date(String Date, String Month, String Year) 
 	{
 		due_date.setDay(Date);
-		due_date.setDay(Month);
-		due_date.setDay(Year);
+		due_date.setMonth(Month);
+		due_date.seYear(Year);
 	}
 	public void set_Due_Date(String Date) 
 	{
         String[] arr_Assign_Date = Date.split("/", 3);
 		
 		due_date.setDay(arr_Assign_Date[0]);
-		due_date.setDay(arr_Assign_Date[1]);
-		due_date.setDay(arr_Assign_Date[2]);
+		due_date.setMonth(arr_Assign_Date[1]);
+		due_date.seYear(arr_Assign_Date[2]);
 	}
 	
 	public String getText() 

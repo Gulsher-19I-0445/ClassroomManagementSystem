@@ -4,12 +4,13 @@ package BusinessLogic;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import DataBase.Oracle_DataBase;
 
 @Entity
-
+@Table(name = "aassessmentItem")
 public class AssessmentItem 
 {
 	@Id

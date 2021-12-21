@@ -31,7 +31,7 @@ public class Oracle_DataBase extends PersistanceManager
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("Driver loaded successfully");
 			
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYED","scott","1234");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
 			
 			System.out.println("Connection Established");
 		}

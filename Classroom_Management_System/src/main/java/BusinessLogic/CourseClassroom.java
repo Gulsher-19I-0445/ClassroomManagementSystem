@@ -458,6 +458,7 @@ public class CourseClassroom
 	public void addAssignment(int teach_id ,String assign_date,String due_date,int total_marks,int weightage, String text) throws FileNotFound
 	{
 		ArrayList<AssessmentItem> list = new ArrayList<AssessmentItem>();
+		
 		System.out.println("Teacher Cheking cheking\n\n\n");
 		for(int i=0 ; i<teachers.size() ; i++)
 		{
@@ -466,6 +467,10 @@ public class CourseClassroom
 				System.out.println("Teacher_id="+teachers.get(i).getId());
 				list = teachers.get(i).addAssessment(students,assign_date,due_date,total_marks,weightage,text);
 			}
+		}
+		if(assignment==null) {
+			
+			assignment=new ArrayList<AssessmentItem>();
 		}
 		for(int i=0;i<list.size();i++)
 		{
