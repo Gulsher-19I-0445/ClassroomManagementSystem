@@ -17,6 +17,7 @@ import BusinessLogic.Main;
 import BusinessLogic.Student;
 import BusinessLogic.admin;
 import BusinessLogic.teacher;
+import CustomExceptions.FileNotFound;
 import DataBase.Oracle_DataBase;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -693,7 +694,7 @@ public class Controller implements Initializable{
 		
 	}
 	
-	public void add_teacher_confirm(ActionEvent e) throws SQLException, ClassNotFoundException {
+	public void add_teacher_confirm(ActionEvent e) throws SQLException, ClassNotFoundException, FileNotFound {
 		m=new Main();
 		boolean dec=Oracle_DataBase.checkTeacherAcc(teacher_email.getText());
 		
@@ -884,7 +885,7 @@ public class Controller implements Initializable{
 	
 	
 	
-	public void addAssignment(ActionEvent e) throws  SQLException, ClassNotFoundException {
+	public void addAssignment(ActionEvent e) throws  SQLException, ClassNotFoundException, NumberFormatException, FileNotFound {
 		m=new Main();
 		String udate = upDate.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		String ddate= dueDate.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));	
@@ -939,7 +940,7 @@ public class Controller implements Initializable{
 		
 	}*/
 	@FXML
-	public void InitiateAttendance(ActionEvent e) throws ClassNotFoundException, SQLException
+	public void InitiateAttendance(ActionEvent e) throws ClassNotFoundException, SQLException, FileNotFound
 	{
 		System.out.print("Initiating Attendance\n");
 		m=new Main();
@@ -977,7 +978,7 @@ public class Controller implements Initializable{
 	/////////////////////////////////////////////////////////////////////////////////
 	
 	@FXML
-	public void MarkAttendance(ActionEvent e) throws ClassNotFoundException, SQLException
+	public void MarkAttendance(ActionEvent e) throws ClassNotFoundException, SQLException, FileNotFound
 	{
 		System.out.print("Initiating Attendance\n");
 		m=new Main();

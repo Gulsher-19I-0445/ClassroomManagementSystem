@@ -31,7 +31,7 @@ public class Oracle_DataBase extends PersistanceManager
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("Driver loaded successfully");
 			
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYED","scott","1234");
 			
 			System.out.println("Connection Established");
 		}
@@ -43,8 +43,8 @@ public class Oracle_DataBase extends PersistanceManager
 		Statement stmt = con.createStatement();
 		Statement stmt1 = con.createStatement();
 		
-		/*//uncomment to drop schema
-	
+		//uncomment to drop schema
+		/*
 		System.out.println("Dropping schema tables");
 		try
 		{
@@ -324,7 +324,7 @@ public class Oracle_DataBase extends PersistanceManager
 		{
 			String sql="INSERT INTO assessment(assessment_id,totalmarks,weightage,duedate,description) VALUES (?,?,?,?,?)";
 			PreparedStatement statement = con.prepareStatement(sql);
-	
+			
 			statement.setInt(1, obj.getAssessment_id());
 			statement.setInt(2, obj.getTotal_marks());
 			statement.setInt(3, obj.getWeightage());
@@ -377,9 +377,9 @@ public class Oracle_DataBase extends PersistanceManager
 			statement.setInt(1, obj.getStd_id());
 			statement.setInt(2, 300);
 			statement.setInt(3, obj.getAssessment_id());
-			statement.setInt(3, obj.getMarksobtained());
-			statement.setString(4, obj.getSubmssion());
-//			statement.setString(5, obj);
+			statement.setInt(4, obj.getMarksobtained());
+			statement.setString(5, obj.getSubmssion());
+			statement.setString(6, obj.getSubmission_date());
 			
 			int rowsInserted = statement.executeUpdate();
 	

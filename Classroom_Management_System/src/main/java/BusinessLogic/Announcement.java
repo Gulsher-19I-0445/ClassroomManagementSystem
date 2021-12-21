@@ -1,7 +1,14 @@
 package BusinessLogic;
 
-public class Announcement {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "aannouncement")
+public class Announcement {
+	
+	@Id
 	private int announccement_id;
 	private String text;
 	

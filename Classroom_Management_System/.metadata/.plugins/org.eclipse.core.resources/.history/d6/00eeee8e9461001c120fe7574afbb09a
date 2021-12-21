@@ -1,0 +1,9 @@
+package DataBase;
+
+public class hibernate extends PersistanceManager
+{
+	public static void main(String[] args)
+	{
+		
+	}
+}

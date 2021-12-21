@@ -2,6 +2,7 @@ package BusinessLogic;
 
 import java.sql.SQLException;
 
+import DataBase.FileHandling;
 import DataBase.Oracle_DataBase;
 import DataBase.PersistanceManager;
 
@@ -11,6 +12,7 @@ public class Main {
 	public admin a;
 	
 	public Main() throws ClassNotFoundException, SQLException{
+		FileHandling fh = new FileHandling();
 		Oracle_DataBase db=new Oracle_DataBase();
 		c=null;
 		c=Oracle_DataBase.getmyClass();

@@ -3,81 +3,104 @@ package BusinessLogic;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import CustomExceptions.FileNotFound;
 import DataBase.Oracle_DataBase;
 
+@MappedSuperclass
+@Table(name = "tteacher")
 public class teacher
 {
 	
 			//Attributes
-		int id;
-		String teacher_name;
-		String teacher_email;
-		String password;
-		int teacher_status;
-		static int att_id;
-		ArrayList<AttendanceItem> Attend = new ArrayList<AttendanceItem>();
+	@Id
+	int id;
+	String teacher_name;
+	String teacher_email;
+	String password;
+	int teacher_status;
+	@Transient
+	static int att_id;
+	
+//	@Column
+//    @ElementCollection(targetClass=AttendanceItem.class)
+	ArrayList<AttendanceItem> Attend = new ArrayList<AttendanceItem>();
 
 		//	Attributes
 		
 		
 		//Constructors
-		public teacher() {
+	public teacher() 
+	{
 			
 			
 			
-		}
+	}
 		
-		public teacher(String name,String email,String password) {
-			this.id=0;
-			teacher_name=name;								//Parametrized
-			teacher_email=email;
-			this.password=password;
-			att_id=0;
-		}
+	public teacher(String name,String email,String password) 
+	{
+		this.id=0;
+		teacher_name=name;								//Parametrized
+		teacher_email=email;
+		this.password=password;
+		att_id=0;
+	}
 		
-		public teacher(int id,String name,String email,String password) {
-			this.id=id;
-			teacher_name=name;								//Parametrized
-			teacher_email=email;
-			this.password=password;
-			att_id=0;
+	public teacher(int id,String name,String email,String password) 
+	{
+		this.id=id;
+		teacher_name=name;								//Parametrized
+		teacher_email=email;
+		this.password=password;
+		att_id=0;
 			
-		}
+	}
 		
-		public teacher(String name,String email) {
-			
-			teacher_name=name;								//Parametrized
-			teacher_email=email;
-			att_id=0;
-			
-		}
+	public teacher(String name,String email) 
+	{	
+		teacher_name=name;								//Parametrized
+		teacher_email=email;
+		att_id=0;		
+	}
 		
-		public teacher(int id,String name,String email,String password,int stat) {
-			this.id=id;
-			teacher_name=name;								//Parametrized
-			teacher_email=email;
-			this.password=password;
-			teacher_status=stat;
-			att_id=0;
-		}
-		
-		public int getId() {
-			return id;
-		}
+	public teacher(int id,String name,String email,String password,int stat) 
+	{
+		this.id=id;
+		teacher_name=name;								//Parametrized
+		teacher_email=email;
+		this.password=password;
+		teacher_status=stat;
+		att_id=0;
+	}	
+	public int getId() 
+	{
+		return id;
+	}
 
-		public void setId(int id) {
-			this.id = id;
-		}
+	public void setId(int id) 
+	{
+		this.id = id;
+	}
 
-		public String getTeacher_name() {
-			return teacher_name;
-		}
+	public String getTeacher_name() 
+	{
+		return teacher_name;
+	}
 
-		public void setTeacher_name(String teacher_name) {
-			this.teacher_name = teacher_name;
-		}
+	public void setTeacher_name(String teacher_name) 
+	{
+		this.teacher_name = teacher_name;
+	}
 
-		public String getTeacher_email() {
+	public String getTeacher_email()
+	{
 			return teacher_email;
 		}
 
@@ -114,7 +137,7 @@ public class teacher
 		
 		
 		
-		Attendance CreateAttendance(String date) throws SQLException
+		Attendance CreateAttendance(String date) throws SQLException, FileNotFound
 		{
 			int check=0;
 			for(int i=0; i<AttendanceCatalog.AttendanceCat.size();i++)
@@ -141,7 +164,7 @@ public class teacher
 				return null;
 			}
 		}
-		ArrayList<AttendanceItem> MarkAttendance(Attendance att,int courseCode,ArrayList<Student>s,ArrayList<Integer>check) throws SQLException
+		ArrayList<AttendanceItem> MarkAttendance(Attendance att,int courseCode,ArrayList<Student>s,ArrayList<Integer>check) throws SQLException, FileNotFound
 		{
 			
 			for(int i=0; i<s.size(); i++)
@@ -160,7 +183,7 @@ public class teacher
 		}
 		
 		//////////////////////////new ftn to add assessment
-		public ArrayList<AssessmentItem> addAssessment(ArrayList<Student> students,String assign_date,String due_date,int total_marks,int weightage, String text)
+		public ArrayList<AssessmentItem> addAssessment(ArrayList<Student> students,String assign_date,String due_date,int total_marks,int weightage, String text) throws FileNotFound
 		{
 			ArrayList<AssessmentItem> list = new ArrayList<AssessmentItem>();
 			int ID = AssessmentCatalog.obj.size();

@@ -1,0 +1,76 @@
+package DataBase;
+
+import org.hibernate.Session;
+import org.hibernate.cfg.Configuration;
+
+import BusinessLogic.Announcement;
+import BusinessLogic.admin;
+import BusinessLogic.teacher;
+
+import org.hibernate.*;
+
+public class hibernate extends PersistanceManager
+{
+	Configuration con;
+	SessionFactory sf1;
+	SessionFactory sf2;
+	SessionFactory sf3;
+	SessionFactory sf4;
+	SessionFactory sf5;
+	SessionFactory sf6;
+	SessionFactory sf7;
+	SessionFactory sf8;
+	SessionFactory sf9;
+	
+	Session session1;
+	Session session2;
+	Session session3;
+	Session session4;
+	Session session5;
+	Session session6;
+	Session session7;
+	Session session8;
+	Session session9;
+	
+	Transaction trans1;
+	Transaction trans2;
+	Transaction trans3;
+	Transaction trans4;
+	Transaction trans5;
+	Transaction trans6;
+	Transaction trans7;
+	Transaction trans8;
+	Transaction trans9;
+	
+	public hibernate()
+	{
+		con = new Configuration();
+		//teacher
+		con.configure().addAnnotatedClass(teacher.class);
+		sf1 = con.buildSessionFactory();
+		session1 = sf1.openSession();
+		trans1 = session1.beginTransaction();
+		//admin
+		con.configure().addAnnotatedClass(admin.class);
+		sf2 = con.buildSessionFactory();
+		session2 = sf2.openSession();
+		trans2 = session2.beginTransaction();
+		//announcement
+		con.configure().addAnnotatedClass(Announcement.class);
+		sf3 = con.buildSessionFactory();
+		session3 = sf3.openSession();
+		trans3 = session3.beginTransaction();
+		//Assessment
+		con.configure().addAnnotatedClass(teacher.class);
+		sf1 = con.buildSessionFactory();
+		session1 = sf1.openSession();
+		trans1 = session1.beginTransaction();
+		
+	}
+	public static void main(String[] args)
+	{
+		
+		
+		
+	}
+}

@@ -1,11 +1,19 @@
 package BusinessLogic;
 
 import java.sql.SQLException;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import CustomExceptions.FileNotFound;
+import DataBase.FileHandling;
 import DataBase.Oracle_DataBase;
 
+@Entity
+@Table(name = "aattendanceitem")
 public class AttendanceItem 
 {
+	@Id
 	int std_id;
 	int coursecode;
 	int date_id;
@@ -13,7 +21,7 @@ public class AttendanceItem
 
 	
 	
-	public AttendanceItem(int std,int courseCode,int dateId,int presence1) throws SQLException
+	public AttendanceItem(int std,int courseCode,int dateId,int presence1) throws SQLException, FileNotFound
 	{
 	
 		std_id=std;
@@ -21,6 +29,7 @@ public class AttendanceItem
 		date_id=dateId;
 		presence=presence1;
 		Oracle_DataBase.addAttendanceItem(this);
+		FileHandling.addAttendanceItem(this);
 		
 		
 	}

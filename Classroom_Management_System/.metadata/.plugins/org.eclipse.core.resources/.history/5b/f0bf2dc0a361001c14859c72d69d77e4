@@ -1,0 +1,28 @@
+package DataBase;
+
+import org.hibernate.Session;
+import org.hibernate.cfg.Configuration;
+
+import BusinessLogic.admin;
+
+import org.hibernate.*;
+
+public class hibernate extends PersistanceManager
+{
+	Configuration con;
+	public hibernate()
+	{
+		con = new Configuration();
+		
+		con.configure().addAnnotatedClass(admin.class);
+		SessionFactory sf = con.buildSessionFactory();
+		Session session = sf.openSession();
+		Transaction trans = session.beginTransaction();
+	}
+	public static void main(String[] args)
+	{
+		
+		
+		
+	}
+}

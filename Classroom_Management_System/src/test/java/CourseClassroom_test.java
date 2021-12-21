@@ -15,6 +15,7 @@ import BusinessLogic.Main;
 import BusinessLogic.Student;
 import BusinessLogic.admin;
 import BusinessLogic.teacher;
+import CustomExceptions.FileNotFound;
 
 public class CourseClassroom_test {
 	Main m;
@@ -44,7 +45,7 @@ public class CourseClassroom_test {
 	}
 
 	@Test
-	public void AddTeachertest() throws SQLException, ClassNotFoundException {
+	public void AddTeachertest() throws SQLException, ClassNotFoundException, FileNotFound {
 		
 		m=new Main();
 		//m.addAdmin("Gulsher", "gulsher@gmail.com", "123");
@@ -183,7 +184,7 @@ public class CourseClassroom_test {
 	
 	
 	@Test
-	public void AddQuiz() throws SQLException, ClassNotFoundException {
+	public void AddQuiz() throws SQLException, ClassNotFoundException, FileNotFound {
 		boolean x=false;
 		m.c.addQuiz(0, "1/1/1", "1/1/1", 20, 5, "Hello world");
 		ArrayList<Assessment>a=AssessmentCatalog.getObj();
@@ -205,7 +206,7 @@ public class CourseClassroom_test {
 	}
 	
 	@Test
-	public void AddAssess() throws SQLException, ClassNotFoundException {
+	public void AddAssess() throws SQLException, ClassNotFoundException, FileNotFound {
 		boolean x=false;
 		m.c.addAssignment(0, "1/1/1", "1/1/1", 20, 5, "Hello world2");
 		ArrayList<Assessment>a=AssessmentCatalog.getObj();
@@ -227,7 +228,7 @@ public class CourseClassroom_test {
 	}
 	
 	@Test
-	public void AddMark() throws SQLException, ClassNotFoundException {
+	public void AddMark() throws SQLException, ClassNotFoundException, FileNotFound {
 		boolean x=false;
 		ArrayList<Integer>arr=new ArrayList<Integer>();
 		arr.add(1);

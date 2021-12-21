@@ -1,13 +1,23 @@
 package BusinessLogic;
 
+
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
 import DataBase.Oracle_DataBase;
+
+@Entity
 
 public class AssessmentItem 
 {
+	@Id
 	private int std_id;
 	private int a_id;
 	private int obtained_marks;
 	private String submission_link;
+	@Transient
 	private Date submission_date; 
 	
 	public AssessmentItem()
@@ -70,9 +80,9 @@ public class AssessmentItem
 	public void setMarksobtained(int marksobtained) {
 		this.obtained_marks = marksobtained;
 	}
-	public Date getSubmission_date() 
+	public String getSubmission_date() 
 	{
-		return submission_date;
+		return submission_date.getFullDate();
 	}
 	public void setSubmission_date(Date submission_date) 
 	{

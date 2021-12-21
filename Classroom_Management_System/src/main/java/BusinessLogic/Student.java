@@ -2,12 +2,17 @@ package BusinessLogic;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import DataBase.Oracle_DataBase;
 
-
+@Entity
+@Table(name = "sstuddent")
 public class Student 
 {
+	@Id
 	private int std_id;
 	private String name;
 	private String email;

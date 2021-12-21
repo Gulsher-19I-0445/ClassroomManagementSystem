@@ -1,11 +1,22 @@
 package BusinessLogic;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
 import DataBase.Oracle_DataBase;
+
+@Entity
 
 public class Assessment 
 {
+	@Id
 	private int a_id;
+	@Transient
 	private Date assign_date;
+	@Transient
 	private Date due_date;
 	private int total_marks;
 	private int weightage;

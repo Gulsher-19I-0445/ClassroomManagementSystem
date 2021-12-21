@@ -1,0 +1,36 @@
+import java.sql.SQLException;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import BusinessLogic.Main;
+import org.junit.Assert;
+
+public class CreateClassTest {
+	Main m;
+	
+	@Before
+	public void setUP() throws ClassNotFoundException, SQLException {
+		
+		m=new Main();
+		
+		
+		
+	}
+	
+	@Test
+	public void testDepositSaving() throws SQLException {
+		
+		m.addAdmin("Gulsher", "gulsherkhan@gmail.com", "123");
+		String expected_string="gulsherkhan@gmail.com";
+		String output=m.a.getTeacher_email();
+		//int expected_value=100;
+		Assert.assertEquals(expected_string,output);
+	//	fail("Not yet implemented");
+	}
+	
+	public CreateClassTest() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

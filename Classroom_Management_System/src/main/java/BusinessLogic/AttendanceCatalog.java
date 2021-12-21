@@ -3,6 +3,8 @@ package BusinessLogic;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import CustomExceptions.FileNotFound;
+import DataBase.FileHandling;
 import DataBase.Oracle_DataBase;
 
 public class AttendanceCatalog {
@@ -33,10 +35,11 @@ public class AttendanceCatalog {
 		return null;
 		 
 	 }
-	 public static void addAttendance(Attendance att)
+	 public static void addAttendance(Attendance att) throws FileNotFound
 	 {
 		 AttendanceCat.add(att);
 		 Oracle_DataBase.addAttendance(att);
+		 FileHandling.addAttendance(att);
 	 }
 	
 	

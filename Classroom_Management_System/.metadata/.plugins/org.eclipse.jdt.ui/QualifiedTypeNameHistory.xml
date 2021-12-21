@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.Table"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.Entity"/>
+    <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
+    <fullyQualifiedTypeName name="BusinessLogic.admin"/>
+    <fullyQualifiedTypeName name="DataBase.hibernate"/>
+    <fullyQualifiedTypeName name="BusinessLogic.Announcement"/>
+    <fullyQualifiedTypeName name="BusinessLogic.teacher"/>
+    <fullyQualifiedTypeName name="BusinessLogic.Assessment"/>
+    <fullyQualifiedTypeName name="BusinessLogic.AssessmentItem"/>
+    <fullyQualifiedTypeName name="BusinessLogic.Attendance"/>
+    <fullyQualifiedTypeName name="BusinessLogic.AttendanceItem"/>
+    <fullyQualifiedTypeName name="BusinessLogic.CourseClassroom"/>
+    <fullyQualifiedTypeName name="BusinessLogic.Student"/>
+    <fullyQualifiedTypeName name="javax.persistence.ElementCollection"/>
+    <fullyQualifiedTypeName name="javax.persistence.Embedded"/>
+    <fullyQualifiedTypeName name="CustomExceptions.FileNotFound"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="BusinessLogic.Date"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="javax.persistence.SequenceGenerator"/>
+    <fullyQualifiedTypeName name="javax.persistence.Embeddable"/>
+    <fullyQualifiedTypeName name="java.beans.Transient"/>
+    <fullyQualifiedTypeName name="javax.persistence.Transient"/>
+    <fullyQualifiedTypeName name="DataBase.FileHandling"/>
+</qualifiedTypeNameHistroy>

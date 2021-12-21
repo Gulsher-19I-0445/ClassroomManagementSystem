@@ -1,25 +1,51 @@
 package BusinessLogic;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import CustomExceptions.FileNotFound;
 import DataBase.Oracle_DataBase;
 
+@Entity
+@Table(name = "ccourseclassroom")
 public class CourseClassroom 
 {
+	@Id
 	private int course_id;
 	private String Cname;
+	@Transient
 	private admin Admin;
+	@Transient
 	static int x;
+	@Transient
 	static int announce_count;
+	@Transient
 	static int std_y;
+	
+	@Transient
 	ArrayList<Student> students = new ArrayList<Student>();
+	@Transient
 	ArrayList<teacher> teachers = new ArrayList<teacher>();
 	
+	@Transient
 	ArrayList<AssessmentItem> quiz = new ArrayList<AssessmentItem>();
+	@Transient
 	ArrayList<AssessmentItem> assignment = new ArrayList<AssessmentItem>();
+	@Transient
 	ArrayList<AttendanceItem> attendance=new ArrayList<AttendanceItem>();
+	
+	@Transient
 	AttendanceCatalog ac;
 	
+	@Transient
 	ArrayList<Announcement> announ = new ArrayList<Announcement>();
  	
 	//constructors
@@ -65,7 +91,6 @@ public class CourseClassroom
 	}
 	
 	public CourseClassroom(int courseId,String name) throws ClassNotFoundException, SQLException{
-		//x=1;
 		x=Oracle_DataBase.getTeachersAccounts();
 		
 		x=x+1;
@@ -166,9 +191,9 @@ public class CourseClassroom
 	//-------------------------------------------------------------------
 							//ADD TEACHER
 	//-------------------------------------------------------------------
-	/*public boolean addTeacher(String email) throws SQLException 
+	public boolean addTeacher(String name, String email) throws SQLException, FileNotFound 
 	{
-	
+		
 		teacher temp=null;
 		try 
 		{
@@ -193,7 +218,7 @@ public class CourseClassroom
 			//e.printStackTrace();
 			return false;
 		}
-	}*/
+	}
 				
 						//REMOVE TEACHER
 	
@@ -254,9 +279,8 @@ public class CourseClassroom
 	//----------------------------------------------------------------------
 	
 	public boolean TeacherAccount(String name,String email, String password) {
-		teacher temp=new teacher(CourseClassroom.x,name,email,password);
+		teacher temp=new teacher(x,name,email,password);
 		CourseClassroom.x++;
-		//System.out.println(x);
 		try 
 		{
 			Oracle_DataBase.createTeacherAccount(temp);
@@ -379,7 +403,7 @@ public class CourseClassroom
 	///////////////MArk Attendance/////////////////////////
 	//----------------------------MarkAttendance------------------------------------------
 	//----------------------------MarkAttendance------------------------------------------
-	public int MarkAttendance(String date,String t_email,ArrayList<Integer>check) throws SQLException
+	public int MarkAttendance(String date,String t_email,ArrayList<Integer>check) throws SQLException, FileNotFound
 	{
 		System.out.print("MArking Attendance\n");
 		teacher t=new teacher();
@@ -415,7 +439,7 @@ public class CourseClassroom
 //-----------------------------------------------------------------------
 //Add assessment
 //-----------------------------------------------------------------------
-	public void addQuiz(int teach_id ,String assign_date,String due_date,int total_marks,int weightage, String text)
+	public void addQuiz(int teach_id ,String assign_date,String due_date,int total_marks,int weightage, String text) throws FileNotFound
 	{
 		ArrayList<AssessmentItem> list = new ArrayList<AssessmentItem>();
 
@@ -431,7 +455,7 @@ public class CourseClassroom
 			quiz.add(list.get(i));
 		}
 	}
-	public void addAssignment(int teach_id ,String assign_date,String due_date,int total_marks,int weightage, String text)
+	public void addAssignment(int teach_id ,String assign_date,String due_date,int total_marks,int weightage, String text) throws FileNotFound
 	{
 		ArrayList<AssessmentItem> list = new ArrayList<AssessmentItem>();
 		System.out.println("Teacher Cheking cheking\n\n\n");

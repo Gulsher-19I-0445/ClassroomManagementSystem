@@ -1,9 +1,21 @@
 package BusinessLogic;
 
 import java.util.Calendar;
+
+import javax.annotation.processing.Generated;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 import java.text.SimpleDateFormat;
 
-public class Date {
+public class Date 
+{
 	private int day;
 	private int month;
 	private int year;

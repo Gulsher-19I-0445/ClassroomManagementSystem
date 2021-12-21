@@ -1,13 +1,18 @@
 package BusinessLogic;
 
 import java.sql.SQLException;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import DataBase.Oracle_DataBase;
 
-
+@Entity
+@Table(name = "aattendance")
 public class Attendance 
 {
 	String date;
+	@Id
 	int AttendanceId;
 	
 	Attendance(String date1,int id) throws SQLException

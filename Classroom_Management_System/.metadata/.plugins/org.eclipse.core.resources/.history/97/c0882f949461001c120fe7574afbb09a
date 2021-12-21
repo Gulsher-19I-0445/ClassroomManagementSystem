@@ -1,0 +1,12 @@
+package DataBase;
+
+import org.hibernate.Session;
+
+public class hibernate extends PersistanceManager
+{
+	public static void main(String[] args)
+	{
+		con = new Configuration();
+		
+	}
+}

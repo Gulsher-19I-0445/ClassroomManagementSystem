@@ -11,6 +11,7 @@ import BusinessLogic.Main;
 import BusinessLogic.Student;
 import BusinessLogic.admin;
 import BusinessLogic.teacher;
+import CustomExceptions.FileNotFound;
 
 public class NegativeTestClassroom {
 
@@ -109,7 +110,7 @@ public class NegativeTestClassroom {
 	
 	
 	@Test
-	public void AddTeachertestNeg() throws SQLException, ClassNotFoundException {
+	public void AddTeachertestNeg() throws SQLException, ClassNotFoundException, FileNotFound {
 		
 		m=new Main();
 		//m.addAdmin("Gulsher", "gulsher@gmail.com", "123");
