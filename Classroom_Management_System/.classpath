@@ -39,5 +39,6 @@
 	<classpathentry kind="lib" path="C:/oracle11g/product/11.2.0/dbhome_1/jdbc/lib/ojdbc6_g.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
 	<classpathentry kind="lib" path="C:/app/gulsh/product/21c/dbhomeXE/jdbc/lib/ojdbc8.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX17"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
