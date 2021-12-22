@@ -1317,6 +1317,14 @@ public class Controller implements Initializable{
 			Data d1=Data.getInstance();
 			tempTeacher=d1.getT();
 			if(tempTeacher!=null) {
+				
+				if(OptionsPane!=null) {
+					
+					Theme t2=Theme.getInstance();
+					setMyTheme(t2);
+					
+				}
+				
 				addAnnoun.setVisible(true);
 				addAssess.setVisible(true);
 				this.Display_att.setVisible(false);
@@ -1434,6 +1442,14 @@ public class Controller implements Initializable{
 			
 			Data d1=Data.getInstance();
 			if(d1.getS()!=null) {
+				
+				if(OptionsPane!=null) {
+					
+					Theme t2=Theme.getInstance();
+					setMyTheme(t2);
+					
+				}
+				
 				this.Display_att.setVisible(false);
 	 	 		this.update_att.setVisible(false);
 	 	 		this.Mark_att.setVisible(false);
